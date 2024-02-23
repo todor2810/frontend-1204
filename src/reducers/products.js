@@ -1,10 +1,9 @@
 import * as productsActions from '../actions/products';
 import {generateId} from '../utils';
-import moment from 'moment';
 
 export const isFeatured = ({rating, featured}) => rating > 8 || featured;
 
-export function products(state = [], action) {
+export const products = (state = [], action) => {
   switch (action.type) {
     case productsActions.RECEIVE_PRODUCTS:
       return [
@@ -28,13 +27,11 @@ export function products(state = [], action) {
         ...action.data,
         id: generateId(),
         featured: isFeatured(action.data),
-        createdAt: moment().format(),
+        createdAt: new Date(),
       }]);
     default:
       return state;
   }
-}
+};
 
-export function getProductById({products}, productId) {
-  return products.find(({id}) => id === productId);
-}
+export const getProductById = ({products}, productId) => products.find(({id}) => id === productId);

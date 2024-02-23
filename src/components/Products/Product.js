@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Card, CardText, CardBody, CardTitle, ListGroup, ListGroupItem, Button} from 'reactstrap';
-import moment from 'moment'
 import {Link} from "react-router-dom";
+import dayjs from "dayjs";
 
 const shortDateFormat = 'MM/DD/YYYY';
 const longDateFormat = 'MM/DD/YYYY hh:mm a';
 
 const Product = ({ product, onDelete }) => {
-  const receiptDate =  product.receiptDate ? moment(product.receiptDate).format(shortDateFormat) : '-';
-  const expirationDate =  product.expirationDate ? moment(product.expirationDate).format(shortDateFormat) : '-';
-  const createdAt = product.createdAt ? moment(product.createdAt).format(longDateFormat) : '-';
+  const receiptDate =  product.receiptDate ? dayjs(product.receiptDate).format(shortDateFormat) : '-';
+  const expirationDate =  product.expirationDate ? dayjs(product.expirationDate).format(shortDateFormat) : '-';
+  const createdAt = product.createdAt ? dayjs(product.createdAt).format(longDateFormat) : '-';
 
   return (
     <Card>
