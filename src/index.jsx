@@ -22,14 +22,14 @@ store.dispatch(fetchCategories());
 store.dispatch(fetchProducts());
 
 ReactDOM.render(
-	<div className="content">
-		<div className="container">
-			<Provider store={store}>
-				<Router history={history}>
-					<App/>
-				</Router>
-			</Provider>
-		</div>
-	</div>,
-	document.getElementById('root')
+    <div className="content">
+        <div className="container">
+            <Provider store={store}>
+                <Router history={history}>
+                    <App/>
+                </Router>
+            </Provider>
+        </div>
+    </div>,
+    document.getElementById('root')
 );

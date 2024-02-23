@@ -7,38 +7,38 @@ import {deleteProduct} from '../../actions/products';
 import {getCategoriesById} from '../../reducers/categories';
 
 class ProductsContainer extends Component {
-  render() {
-    const { products, dispatch } = this.props;
+    render() {
+        const {products, dispatch} = this.props;
 
-    return (
-      <Fragment>
-        <Header name="Products"/>
-        <ProductsList products={products} onDelete={(id) => dispatch(deleteProduct(id))} />
-      </Fragment>
-    );
-  }
+        return (
+            <Fragment>
+                <Header name="Products"/>
+                <ProductsList products={products} onDelete={(id) => dispatch(deleteProduct(id))}/>
+            </Fragment>
+        );
+    }
 }
 
 ProductsContainer.propTypes = {
-  products: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired,
+    products: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
-  const categoriesById = getCategoriesById(state);
+    const categoriesById = getCategoriesById(state);
 
-  const products = state.products.map(product => {
-    const categories =  product.categories.map(id => categoriesById[id])
+    const products = state.products.map(product => {
+        const categories = product.categories.map(id => categoriesById[id])
+
+        return {
+            ...product,
+            categories
+        };
+    });
 
     return {
-      ...product,
-      categories
-    };
-  });
-
-  return {
-    products,
-  }
+        products,
+    }
 };
 
 export default connect(mapStateToProps)(ProductsContainer);

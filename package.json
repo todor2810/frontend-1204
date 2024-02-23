@@ -33,9 +33,6 @@
     "redux-thunk": "2.4.2",
     "vite": "5.1.4"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

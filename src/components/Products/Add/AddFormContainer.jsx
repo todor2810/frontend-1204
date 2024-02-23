@@ -13,7 +13,9 @@ class AddFormContainer extends Component {
             <>
                 <Link to='/'>Home</Link>
                 <ProductForm
-                    onSave={(data) => {return;}}
+                    onSave={(data) => {
+                        return;
+                    }}
                     categories={categories}
                 />
             </>

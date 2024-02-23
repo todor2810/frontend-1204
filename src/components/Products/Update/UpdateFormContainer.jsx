@@ -18,7 +18,9 @@ class UpdateFormContainer extends Component {
             <>
                 <Link to='/'>Home</Link>
                 <ProductForm
-                    onSave={(data) => {return}}
+                    onSave={(data) => {
+                        return
+                    }}
                     product={product}
                     categories={categories}
                 />

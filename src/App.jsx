@@ -7,21 +7,21 @@ import UpdateFormContainer from './components/Products/Update/UpdateFormContaine
 import AddFormContainer from './components/Products/Add/AddFormContainer';
 
 class App extends Component {
-	render() {
-		return (
-			<Main>
-				<Switch>
-					<Route exact path="/" component={ProductsContainer}/>,
-					<Route
-						path="/edit/:productId"
-						render={({match}) => (<UpdateFormContainer productId={parseInt(match.params.productId)}/>)}
-					/>,
-					<Route path="/add" component={AddFormContainer}/>,
-					<Route path="*" component={NotFound}/>,
-				</Switch>
-			</Main>
-		)
-	}
+    render() {
+        return (
+            <Main>
+                <Switch>
+                    <Route exact path="/" component={ProductsContainer}/>,
+                    <Route
+                        path="/edit/:productId"
+                        render={({match}) => (<UpdateFormContainer productId={parseInt(match.params.productId)}/>)}
+                    />,
+                    <Route path="/add" component={AddFormContainer}/>,
+                    <Route path="*" component={NotFound}/>,
+                </Switch>
+            </Main>
+        )
+    }
 }
 
 export default App;
