@@ -4,7 +4,7 @@ import {Button, Form, FormFeedback, FormGroup, Input, Label} from 'reactstrap';
 import {getMultiSelected, repeat} from '../../../utils';
 import {isCategoriesValid, isNameValid} from './validators';
 
-const ProductForm = ({categories, onSave, product = {}}) => {
+export const ProductForm = ({onSave, product = {}}) => {
     const [name, setName] = useState(product.name || '');
     const [brand, setBrand] = useState(product.brand || '');
     const [rating, setRating] = useState(product.rating || 0);
@@ -127,5 +127,3 @@ ProductForm.propTypes = {
     categories: PropTypes.array.isRequired,
     onSave: PropTypes.func.isRequired,
 };
-
-export default ProductForm;

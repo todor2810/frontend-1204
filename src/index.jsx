@@ -7,7 +7,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import reducers from './reducers';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
+import {App} from './App';
 import {fetchCategories} from './actions/categories';
 import {fetchProducts} from './actions/products';
 import {createHashHistory} from 'history';
