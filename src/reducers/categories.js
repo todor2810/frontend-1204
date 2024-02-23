@@ -1,6 +1,6 @@
 import * as categoriesActions from '../actions/categories';
 
-export function categories(state = [], action) {
+export const categories = (state = [], action) => {
     switch (action.type) {
         case categoriesActions.RECEIVE_CATEGORIES:
             return [
@@ -9,13 +9,13 @@ export function categories(state = [], action) {
         default:
             return state;
     }
-}
+};
 
-export function getCategoriesById(state) {
-    return state.categories.reduce((acc, category) => {
-        return {
+export const getCategoriesById = state =>
+    state.categories.reduce(
+        (acc, category) => ({
             ...acc,
             [category.id]: category
-        }
-    }, {})
-}
+        }),
+        {}
+    );

@@ -1,7 +1,7 @@
 import products from '../mocks/products';
 
 class ProductApi {
-    getProducts = () => {
+    getProducts() {
         return products;
     }
 }
