@@ -4,8 +4,7 @@ import {Button, Form, FormFeedback, FormGroup, Input, Label} from 'reactstrap';
 import {getMultiSelected, repeat} from '../../../utils';
 import {isCategoriesValid, isNameValid} from './validators';
 
-const ProductForm = (props) => {
-    const {product = {}} = props;
+export const ProductForm = ({onSave, product = {}}) => {
     const [name, setName] = useState(product.name || '');
     const [brand, setBrand] = useState(product.brand || '');
     const [rating, setRating] = useState(product.rating || 0);
@@ -17,7 +16,7 @@ const ProductForm = (props) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        props.onSave({
+        onSave({
             name,
             brand,
             rating,
@@ -80,7 +79,7 @@ const ProductForm = (props) => {
                     value={categories}
                     onChange={({target}) => setCategories(getMultiSelected(target))}
                 >
-                    {props.categories.map(({id, name}) => (
+                    {categories.map(({id, name}) => (
                         <option key={id} value={id}>{name}</option>
                     ))}
                 </Input>
@@ -128,5 +127,3 @@ ProductForm.propTypes = {
     categories: PropTypes.array.isRequired,
     onSave: PropTypes.func.isRequired,
 };
-
-export default ProductForm;
