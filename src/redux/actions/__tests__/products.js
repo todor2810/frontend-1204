@@ -1,9 +1,9 @@
-import {CREATE_PRODUCT, createProductForm, UPDATE_PRODUCT, updateProductForm} from '../products';
+import { CREATE_PRODUCT, createProductForm, UPDATE_PRODUCT, updateProductForm } from '../products';
 
 describe('products', () => {
     let dispatch;
     const history = {};
-    const deps = {history}
+    const deps = { history }
 
     describe('updateProductForm', () => {
         beforeEach(() => {
@@ -12,7 +12,7 @@ describe('products', () => {
         })
 
         it('update a product', () => {
-            const data = {name: 'iphone'};
+            const data = { name: 'iphone' };
             updateProductForm('1', data)(dispatch, undefined, deps);
 
             expect(dispatch).toHaveBeenCalled();
@@ -35,7 +35,7 @@ describe('products', () => {
         })
 
         it('create a product', () => {
-            const data = {name: 'iphone'};
+            const data = { name: 'iphone' };
             createProductForm(data)(dispatch, undefined, deps);
 
             expect(dispatch).toHaveBeenCalled();

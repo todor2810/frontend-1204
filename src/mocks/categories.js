@@ -33,14 +33,10 @@ const categories = [
     },
     {
         id: 9,
-        name: 'Monitors',
-    },
-    {
-        id: 10,
         name: 'Camera & Photo',
     },
     {
-        id: 11,
+        id: 10,
         name: 'Audio & HiFi',
     },
 ];

@@ -1,4 +1,4 @@
-import {productApi} from '../gateways/ProductApi';
+import { productApi } from '../../gateways/ProductApi';
 
 export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
@@ -37,12 +37,12 @@ export const fetchProducts = () => dispatch => {
     dispatch(receiveProducts(json));
 };
 
-export const updateProductForm = (id, data) => (dispatch, getState, {history}) => {
+export const updateProductForm = (id, data) => (dispatch, getState, { history }) => {
     dispatch(updateProduct(id, data));
     history.push('/');
 }
 
-export const createProductForm = (data) => (dispatch, getState, {history}) => {
+export const createProductForm = (data) => (dispatch, getState, { history }) => {
     dispatch(createProduct(data));
     history.push('/');
 }

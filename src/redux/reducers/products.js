@@ -1,7 +1,7 @@
 import * as productsActions from '../actions/products';
-import {generateId} from '../utils';
+import { generateId } from '../../utils';
 
-export const isFeatured = ({rating, featured}) => rating > 8 || featured;
+export const isFeatured = ({ rating, featured }) => rating > 8 || featured;
 
 export const products = (state = [], action) => {
     switch (action.type) {
@@ -34,4 +34,4 @@ export const products = (state = [], action) => {
     }
 };
 
-export const getProductById = ({products}, productId) => products.find(({id}) => id === productId);
+export const getProductById = ({ products }, productId) => products.find(({ id }) => id === productId);

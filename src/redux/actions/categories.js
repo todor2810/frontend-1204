@@ -10,7 +10,7 @@ const receiveCategories = (json) => ({
     categories: json.map(category => category),
 });
 
-export const fetchCategories = () => (dispatch, getState, {categoryApi}) => {
+export const fetchCategories = () => (dispatch, getState, { categoryApi }) => {
     dispatch(requestCategories());
     const json = categoryApi.getCategories();
     dispatch(receiveCategories(json));

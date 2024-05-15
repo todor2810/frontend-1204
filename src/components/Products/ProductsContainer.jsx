@@ -1,22 +1,16 @@
-import React, {Fragment} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import ProductsList from './ProductsList';
-import {deleteProduct} from '../../actions/products';
-import {getCategoriesById} from '../../reducers/categories';
+import { deleteProduct } from '../../redux/actions/products';
+import { getCategoriesById } from '../../redux/reducers/categories';
 
-const ProductsContainer = ({dispatch, products}) => (
-    <Fragment>
-        <Header name="Products"/>
-        <ProductsList products={products} onDelete={(id) => dispatch(deleteProduct(id))}/>
-    </Fragment>
+const ProductsContainer = ({ dispatch, products }) => (
+    <>
+        <Header name="Products" />
+        <ProductsList products={products} onDelete={(id) => dispatch(deleteProduct(id))} />
+    </>
 );
-
-ProductsContainer.propTypes = {
-    products: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = (state) => {
     const categoriesById = getCategoriesById(state);
